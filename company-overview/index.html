@@ -46,7 +46,7 @@
       .bar {
         width: min(1180px, calc(100% - 32px));
         margin: 0 auto;
-        min-height: 92px;
+        min-height: 108px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -54,6 +54,23 @@
       }
 
       .brand {
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .brand-logo {
+        display: block;
+        width: min(390px, 44vw);
+        height: auto;
+        max-height: 78px;
+        object-fit: contain;
+        background: white;
+        border-radius: 6px;
+      }
+
+      .brand-text {
         min-width: 0;
       }
 
@@ -69,6 +86,24 @@
         margin: 8px 0 0;
         color: rgba(255, 255, 255, 0.78);
         font-size: 16px;
+      }
+
+      .partner-logo {
+        display: block;
+        width: 150px;
+        height: auto;
+        max-height: 74px;
+        object-fit: contain;
+        padding: 8px 10px;
+        background: white;
+        border-radius: 6px;
+      }
+
+      .actions {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 16px;
       }
 
       .open-link {
@@ -126,11 +161,33 @@
 
       @media (max-width: 720px) {
         .bar {
-          min-height: 116px;
+          min-height: 0;
           align-items: flex-start;
           justify-content: center;
           flex-direction: column;
           padding: 20px 0;
+        }
+
+        .brand {
+          width: 100%;
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .brand-logo {
+          width: min(100%, 390px);
+          max-height: none;
+        }
+
+        .actions {
+          width: 100%;
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        .partner-logo {
+          width: 170px;
+          max-height: none;
         }
 
         .open-link {
@@ -144,7 +201,7 @@
 
         .viewer {
           min-height: 0;
-          height: calc(100vh - 128px);
+          height: calc(100vh - 228px);
           border-left: 0;
           border-right: 0;
           border-radius: 0;
@@ -156,12 +213,22 @@
     <header>
       <div class="bar">
         <div class="brand">
-          <h1>NOBOA TRADING</h1>
-          <p class="subtitle">Company Overview</p>
+          <img
+            class="brand-logo"
+            src="noboa-trading-logo.jpg"
+            alt="Noboa Trading Co TCN S.A."
+          />
+          <div class="brand-text">
+            <h1>NOBOA TRADING</h1>
+            <p class="subtitle">Company Overview</p>
+          </div>
         </div>
-        <a class="open-link" href="company-overview.pdf" target="_blank" rel="noopener">
-          Abrir PDF
-        </a>
+        <div class="actions">
+          <img class="partner-logo" src="bonita-logo.jpg" alt="Bonita Premium Bananas" />
+          <a class="open-link" href="company-overview.pdf" target="_blank" rel="noopener">
+            Abrir PDF
+          </a>
+        </div>
       </div>
     </header>
 
